@@ -25,7 +25,9 @@ namespace ConsoleApp1
 
             //pub.Publish("perguntas", "teste");
 
+           
             
+
            sub.Subscribe("perguntas", (ch, msg) =>
            {
                //pub.Publish("perguntas", "teste");               
@@ -33,9 +35,12 @@ namespace ConsoleApp1
                var pergunta = msg.ToString().Substring(msg.ToString().IndexOf(":")+1); ;
                
                Console.WriteLine("Mensagem: " + msg.ToString() + "\nPrefixo:" + prefixo + "\nPergunta:" + pergunta + "\nResposta:" + PesquisaResposta(pergunta) );
+               
+               //pub.Publish("perguntas", "\nResposta:" + PesquisaResposta(pergunta));
+
            });
 
-           pub.Publish("perguntas", "P1:Quanto é 1 * 1 ?");
+           pub.Publish("perguntas", "P1:Quanto e 1 * 1 ?");
 
            Console.ReadKey();           
 
@@ -44,7 +49,7 @@ namespace ConsoleApp1
         public static string PesquisaResposta(string pergunta)
         {
             
-            if(pergunta == "Quanto é 1 * 1 ?")
+            if(pergunta == "Quanto e 1 * 1 ?")
             {
                 return "1";
             }
