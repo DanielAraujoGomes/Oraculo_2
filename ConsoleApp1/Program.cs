@@ -45,6 +45,7 @@ namespace ConsoleApp1
         {
             
             if(pergunta == "Quanto é 1 * 1 ?")
+
             {
                 return "1";
             }
